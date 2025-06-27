@@ -51,7 +51,7 @@ export class UserController {
 
   // ✅ Admin-only route
   @UseGuards(RolesGuard)
-  @Roles(Role.Admin)
+  @Roles(Role.ADMIN)
   @Get('admin-only')
   adminOnly(@Request() req) {
     return {

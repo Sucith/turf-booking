@@ -34,7 +34,7 @@ export class UserService {
       email,
       password: hashedPassword,
       phnum,
-      role: Role.User,
+      role: Role.USER,
     });
 
     return this.userRepository.save(user);

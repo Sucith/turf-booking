@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "commonjs",                       // ✅ Needed for __dirname
+    "target": "ES2023",
     "declaration": true,
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "target": "ES2023",
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
@@ -16,6 +16,12 @@
     "forceConsistentCasingInFileNames": true,
     "noImplicitAny": false,
     "strictBindCallApply": false,
-    "noFallthroughCasesInSwitch": false
-  }
+    "noFallthroughCasesInSwitch": false,
+
+    // ✅ Add these:
+    "moduleResolution": "node",                 // Required to resolve node_modules
+    "esModuleInterop": true,                    // Fixes many import issues
+    "typeRoots": ["node_modules/@types"]        // Tells TypeScript where to find type declarations
+  },
+  "exclude": ["node_modules", "dist"]
 }
